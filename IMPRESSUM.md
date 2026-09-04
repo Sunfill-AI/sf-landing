@@ -3,6 +3,13 @@ title: Impressum
 permalink: /impressum/
 ---
 
+<style>
+/* Hide the site header on the Impressum page only. This is non-destructive and will override most theme headers. */
+header, .site-header, #header, .header {
+  display: none !important;
+}
+</style>
+
 Impressum
 
 Angaben gemäß § 5 DDG und § 18 Abs. 1 MStV
