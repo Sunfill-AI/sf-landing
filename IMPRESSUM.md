@@ -4,11 +4,26 @@ permalink: /impressum/
 ---
 
 <style>
-/* Hide the site header on the Impressum page only. This is non-destructive and will override most theme headers. */
-header, .site-header, #header, .header {
+/* Hide the site header and common branding elements on the Impressum page only. This is non-destructive and will override most theme headers. */
+header, .site-header, #header, .header,
+.site-title, .site-branding, .brand, .navbar-brand, .logo, .site-name, .header__title, .site-logo, .masthead .title {
   display: none !important;
 }
 </style>
+
+<script>
+// As a fallback, remove any visible element whose exact text is "sf-landing" (case-insensitive)
+// This handles themes that render the site title in uncommon elements.
+document.addEventListener('DOMContentLoaded', function(){
+  var target = 'sf-landing';
+  var nodes = document.querySelectorAll('h1, h2, h3, div, span, a, p');
+  nodes.forEach(function(n){
+    if(n.textContent && n.textContent.trim().toLowerCase() === target){
+      n.style.display = 'none';
+    }
+  });
+});
+</script>
 
 Impressum
 
